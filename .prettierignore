@@ -1,0 +1,30 @@
+# Other files
+public/.env
+public/.htaccess
+
+# NPM
+node_modules
+package-lock.json
+pnpm-lock.yaml
+
+# Build files
+.next/*
+dist/*
+
+# Devenv
+.devenv/
+.direnv/
+devenv*
+flake.nix
+flake.lock
+
+# Composer
+public/vendor
+composer.lock
+
+# Markdown: use markdownlint instead (https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+*.md
+
+# Editor configs
+.idea/
+.vscode/

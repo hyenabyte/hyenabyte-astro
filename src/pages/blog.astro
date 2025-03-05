@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import type { BlogPost } from '../content.config';
+
+const posts = (await getCollection('blog')) as BlogPost[];
+---
+
+<Layout>
+  <article class="postPage prose">
+    <h1>Blog</h1>
+
+    <ul class="postPage-recents">
+      {
+        posts.map((post) => (
+          <li class="postPage-post">
+            <a href={'/posts/' + post.id}>
+              <h2>{post.data.title}</h2>
+            </a>
+            <span>{post.data.pubDate}</span>
+            <p>{post.data.description}</p>
+            <p>
+              <a href={'/posts/' + post.id}>Read More</a>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</Layout>
+
+<style>
+  .postPage {
+    .postPage-tagList {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .postPage-recents {
+      list-style: none;
+      padding: 0;
+    }
+
+    .postPage-post {
+      & > a {
+        text-decoration: none;
+      }
+
+      h2 {
+        color: rgb(var(--color-muteoki-blue));
+      }
+    }
+  }
+</style>

@@ -1,0 +1,144 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '../assets/images/profile.jpg';
+
+type ProfileIcon = {
+  url: string;
+  label: string;
+  icon: string;
+};
+
+const profileLinks: ProfileIcon[] = [
+  {
+    url: 'https://github.com/hyenabyte',
+    label: 'Github',
+    icon: 'icon-github',
+  },
+  {
+    url: 'https://hachyderm.io/@hyena',
+    label: 'Mastodon',
+    icon: 'icon-mastodon',
+  },
+  {
+    url: '#',
+    label: 'BlueSky',
+    icon: 'icon-at-sign',
+  },
+];
+---
+
+<div class="profile">
+  <div class="image">
+    <Image
+      src={profileImage}
+      alt="A black and white drawing of the head of hyena. The hyena has glowing white eyes, and a streak of glistening black oil running over its face."
+    />
+  </div>
+
+  <div class="prose">
+    <h1 class="profile-title blue">avi yena</h1>
+
+    <p class="profile-pronouns">
+      <strong class="cyan">[any pronouns]</strong>
+    </p>
+    <p class="profile-subtitle">
+      <em> just a little creature on the internet trying their best </em>
+    </p>
+    <div class="profile-icons">
+      {
+        profileLinks.map((link) => (
+          <a href={link.url} target="_blank">
+            <span class="profile-icon-tooltip">{link.label}</span>
+            <i class:list={['icon', 'icon-invert', link.icon]} />
+          </a>
+        ))
+      }
+    </div>
+    <p class="profile-description">
+      Hi! I am <span class="blue">Avi</span> (not my real name) and I am a developer, pixel artist, vtuber, and more!
+    </p>
+    <p class="profile-description">
+      By profession I am a full stack web developer and have worked extensively with PHP and Typescript, but by night I
+      like to explore and learn new stuff. Most recently I have been obsessed with Nix and Gleam, but the techstacks for
+      my personal projects are forever in flux.
+    </p>
+    <p class="profile-description">This website is a work in progress - more to come :)</p>
+  </div>
+</div>
+
+<style>
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 768px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .image {
+      border-radius: 100%;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      user-select: none;
+
+      max-width: 200px;
+      max-height: 200px;
+    }
+
+    .profile-title {
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 0rem;
+    }
+
+    .profile-pronouns,
+    .profile-subtitle {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .profile-icons {
+      display: flex;
+      /* flex-direction: column; */
+
+      justify-content: space-evenly;
+
+      /* &:hover>.icon { */
+      /* background-color: rgb(var(--color-muteoki-yellow-light)); */
+      /* } */
+
+      /* &:hover:where(.dark, .dark *)>.icon { */
+      /* background-color: rgb(var(--color-muteoki-yellow)); */
+      /* } */
+
+      a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 50px;
+        width: 50px;
+
+        border: solid 1px rgb(var(--color-muteoki-base-800));
+        border-radius: 100%;
+
+        &:where(.dark, .dark *) {
+          border-color: rgb(var(--color-muteoki-base-200));
+        }
+
+        &:hover .profile-icon-tooltip {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 640px) {
+    .profile .image {
+      max-width: 300px;
+      max-height: 300px;
+    }
+  }
+</style>

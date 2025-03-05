@@ -1,0 +1,25 @@
+/* MEDIA MODULES */
+
+img,
+video {
+  opacity: 1;
+  transition: opacity 250ms ease-out;
+
+  &[data-src] {
+    opacity: 0;
+  }
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  height: 300px;
+  width: 300px;
+  img {
+    height: 100%;
+    widht: 100%;
+    object-fit: contain;
+  }
+}

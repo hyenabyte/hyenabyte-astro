@@ -1,0 +1,11 @@
+/* FONTS */
+
+@import url(https://fonts.bunny.net/css?family=atkinson-hyperlegible:400|b612-mono:400);
+
+@layer base {
+  :root {
+    --font-sans: 'Atkinson Hyperlegible', sans-serif;
+    --font-serif: '';
+    --font-mono: 'B612 Mono', monospace;
+  }
+}

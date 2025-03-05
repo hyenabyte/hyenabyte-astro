@@ -1,0 +1,95 @@
+/* COLORS */
+
+@layer base {
+  :root {
+    --color-muteoki-black: 9 9 10;
+    --color-muteoki-base-950: 28 27 26;
+    --color-muteoki-base-900: 40 39 38;
+    --color-muteoki-base-850: 52 51 49;
+    --color-muteoki-base-800: 64 62 60;
+    --color-muteoki-base-700: 87 86 83;
+    --color-muteoki-base-600: 111 110 105;
+    --color-muteoki-base-500: 135 133 128;
+    --color-muteoki-base-300: 183 181 172;
+    --color-muteoki-base-200: 206 205 195;
+    --color-muteoki-base-150: 218 216 206;
+    --color-muteoki-base-100: 230 228 217;
+    --color-muteoki-base-50: 242 240 229;
+    --color-muteoki-paper: 248 244 237;
+
+    --color-muteoki-red: 151 72 79;
+    --color-muteoki-red-light: 209 100 105;
+    --color-muteoki-orange: 0 0 0;
+    --color-muteoki-orange-light: 0 0 0;
+    --color-muteoki-yellow: 161 122 44;
+    --color-muteoki-yellow-light: 219 181 96;
+    --color-muteoki-green: 115 121 79;
+    --color-muteoki-green-light: 166 174 90;
+    --color-muteoki-cyan: 64 116 103;
+    --color-muteoki-cyan-light: 114 175 160;
+    --color-muteoki-blue: 76 114 136;
+    --color-muteoki-blue-light: 119 175 202;
+    --color-muteoki-purple: 0 0 0;
+    --color-muteoki-purple-light: 0 0 0;
+    --color-muteoki-magenta: 161 106 141;
+    --color-muteoki-magenta-light: 193 147 176;
+
+    --color-background: rgb(var(--color-muteoki-paper));
+  }
+}
+
+.prose {
+  --prose-body: rgb(var(--color-muteoki-base-800));
+  --prose-headings: rgb(var(--color-muteoki-base-900));
+  --prose-lead: rgb(var(--color-muteoki-base-700));
+  --prose-links: rgb(var(--color-muteoki-base-900));
+  --prose-bold: rgb(var(--color-muteoki-base-900));
+  --prose-counters: rgb(var(--color-muteoki-base-600));
+  --prose-bullets: rgb(var(--color-muteoki-base-400));
+  --prose-hr: rgb(var(--color-muteoki-base-300));
+  --prose-quotes: rgb(var(--color-muteoki-base-900));
+  --prose-quote-borders: rgb(var(--color-muteoki-base-300));
+  --prose-captions: rgb(var(--color-muteoki-base-700));
+  --prose-code: rgb(var(--color-muteoki-base-900));
+  --prose-pre-code: rgb(var(--color-muteoki-base-100));
+  --prose-pre-bg: rgb(var(--color-muteoki-base-900));
+  --prose-th-borders: rgb(var(--color-muteoki-base-300));
+  --prose-td-borders: rgb(var(--color-muteoki-base-200));
+  --prose-invert-body: rgb(var(--color-muteoki-base-200));
+  --prose-invert-headings: rgb(var(--color-muteoki-paper));
+  --prose-invert-lead: rgb(var(--color-muteoki-base-300));
+  --prose-invert-links: rgb(var(--color-muteoki-paper));
+  --prose-invert-bold: rgb(var(--color-muteoki-paper));
+  --prose-invert-counters: rgb(var(--color-muteoki-base-400));
+  --prose-invert-bullets: rgb(var(--color-muteoki-base-600));
+  --prose-invert-hr: rgb(var(--color-muteoki-base-700));
+  --prose-invert-quotes: rgb(var(--color-muteoki-base-100));
+  --prose-invert-quote-borders: rgb(var(--color-muteoki-base-700));
+  --prose-invert-captions: rgb(var(--color-muteoki-base-400));
+  --prose-invert-code: rgb(var(--color-muteoki-paper));
+  --prose-invert-pre-code: rgb(var(--color-muteoki-base-300));
+  --prose-invert-pre-bg: rgb(0 0 0 / 50%);
+  --prose-invert-th-borders: rgb(var(--color-muteoki-base-600));
+  --prose-invert-td-borders: rgb(var(--color-muteoki-base-700));
+  font-size: 1rem;
+  line-height: 1.75;
+
+  &:where(.dark, .dark *) {
+    --prose-body: var(--prose-invert-body);
+    --prose-headings: var(--prose-invert-headings);
+    --prose-lead: var(--prose-invert-lead);
+    --prose-links: var(--prose-invert-links);
+    --prose-bold: var(--prose-invert-bold);
+    --prose-counters: var(--prose-invert-counters);
+    --prose-bullets: var(--prose-invert-bullets);
+    --prose-hr: var(--prose-invert-hr);
+    --prose-quotes: var(--prose-invert-quotes);
+    --prose-quote-borders: var(--prose-invert-quote-borders);
+    --prose-captions: var(--prose-invert-captions);
+    --prose-code: var(--prose-invert-code);
+    --prose-pre-code: var(--prose-invert-pre-code);
+    --prose-pre-bg: var(--prose-invert-pre-bg);
+    --prose-th-borders: var(--prose-invert-th-borders);
+    --prose-td-borders: var(--prose-invert-td-borders);
+  }
+}

@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Profile from '../components/Profile.astro';
+---
+
+<Layout>
+  <article class="prose">
+    <h1>HTML Elements List for Styling</h1><ol>
+      <li><a href="#headings">Headings</a></li><li><a href="#paragraphs">Paragraphs</a></li><li>
+        <a href="#html-semantic-text-elements">HTML Semantic Text Elements</a>
+      </li><li><a href="#figure">Figure</a></li><li><a href="#aside">Aside</a></li><li>
+        <a href="#details">Details</a>
+      </li><li><a href="#dialog">Dialog</a></li><li><a href="#blockquote">Blockquote</a></li><li>
+        <a href="#address">Address</a>
+      </li><li><a href="#unordered-list">Unordered List</a></li><li><a href="#ordered-list">Ordered List</a></li><li>
+        <a href="#descriptive-list">Descriptive List</a>
+      </li><li><a href="#buttons">Buttons</a></li><li><a href="#table">Table</a></li>
+    </ol><hr /><h3 id="headings">Headings</h3><h1>H1 Heading</h1><h2>H2 Heading</h2><h3>H3 Heading</h3><h4>
+      H4 Heading
+    </h4><h5>H5 Heading</h5><h6>H6 Heading</h6><hr /><h3 id="paragraphs">Paragraphs</h3><p class="">
+      Lorem ipsum dolor sit amet, consectetur <a href="#"
+        >adipiscing elit. Praesent risus leo, dictum in vehicula sit amet</a
+      >, feugiat tempus tellus. Duis quis sodales risus. Etiam euismod ornare consequat.
+    </p><p>
+      Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face
+      on everything hopped up on goofballs.
+    </p><hr /><h3 id="html-semantic-text-elements">HTML Semantic Text Elements</h3><p>
+      <strong>Bold</strong>
+      <code>&lt;strong&gt;</code>
+    </p><p><em>Italic</em> <code>&lt;em&gt;</code></p><p>
+      <del>Deleted or Corrected</del>
+      <code>&lt;del&gt;</code> or <code>&lt;s&gt;</code>
+    </p><p><ins>Inserted</ins> <code>&lt;ins&gt;</code></p><p><small>Small text</small> <code>&lt;small&gt;</code></p><p
+    >
+      <code>Inline Code</code>
+      <code>&lt;code&gt;</code>
+    </p><p><pre>Pre formatted text</pre> <code>&lt;pre&gt;</code></p><p>
+      Keyboard Input: <kbd>Ctrl</kbd> + <kbd>K</kbd>
+      <code>&lt;kbd&gt;</code>
+    </p><samp><samp>Sample output</samp> <code>&lt;samp&gt;</code></samp><p>
+      <abbr title="Abbreviation">ABBR</abbr>
+      <code>&lt;abbr&gt;</code>
+    </p><p><cite>Citation</cite> <code>&lt;cite&gt;</code></p><p><q>Short quotation</q> <code>&lt;q&gt;</code></p><p>
+      Text<sup>Superscripted</sup>
+      <code>&lt;sup&gt;</code>
+    </p><p>Text<sub>Subscripted</sub> <code>&lt;sub&gt;</code></p><p><u>Underlined</u> <code>&lt;u&gt;</code></p><p>
+      <mark>Highlighted</mark>
+      <code>&lt;mark&gt;</code>
+    </p><p><time>20:14</time> <code>&lt;time&gt;</code></p><p><var>x = y + 2</var> <code>&lt;var&gt;</code></p><p>
+      <label for="disk_c">Disk usage C: </label><meter id="disk_c" value="0.6">60%</meter>
+      <code>&lt;meter&gt;</code>
+    </p><p>
+      <label for="file">Download progress: </label><progress id="file" value="32" max="100">32%</progress>
+      <code>&lt;progress&gt;</code>
+    </p><hr /><h3 id="figure">Figure</h3><figure>
+      <img src="https://cdn2.thecatapi.com/images/b7k.jpg" /><figcaption>A cat!</figcaption>
+    </figure><hr /><h3 id="aside">Aside</h3><aside>
+      <h4>Epcot Center</h4><p>
+        Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions,
+        award-winning fireworks and seasonal special events.
+      </p>
+    </aside><hr /><h3 id="details">Details</h3><details>
+      <summary>Epcot Center</summary><p>
+        Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions,
+        award-winning fireworks and seasonal special events.
+      </p>
+    </details><hr /><h3 id="dialog">Dialog</h3><dialog open="">
+      Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions,
+      award-winning fireworks and seasonal special events.
+    </dialog><hr /><h3 id="blockquote">Blockquote</h3><blockquote>
+      <p>
+        The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of
+        everyday life.
+      </p><p><cite>- Bill Gates</cite></p>
+    </blockquote><hr /><h3 id="address">Address</h3><address>
+      Written by <a href="mailto:webmaster@example.com">Jon Doe</a><br />Visit us at:<br />Example.com<br />Box 564,
+      Disneyland<br />USA
+    </address><hr /><h3 id="unordered-list">Unordered List</h3><ul>
+      <li>List item 1</li><li>
+        List item 2<ul><li>List item 2.1</li><li>List item 2.2</li><li>List item 2.3</li></ul>
+      </li><li>List item 3</li>
+    </ul><hr /><h3 id="ordered-list">Ordered List</h3><ol>
+      <li>List item 1</li><li>
+        List item 2<ol><li>List item 2.1</li><li>List item 2.2</li><li>List item 2.3</li></ol>
+      </li><li>List item 3</li>
+    </ol><hr /><h3 id="descriptive-list">Descriptive List</h3><dl>
+      <dt>Coffee</dt><dd>Black hot drink</dd><dt>Milk</dt><dd>White cold drink</dd>
+    </dl><hr /><h3 id="buttons">Buttons</h3><p>
+      <button class="btn btn--primary">Primary Button</button>
+      <a href="#" role="button" class="btn btn--primary">Primary Anchor Tag Button</a>
+      <button class="btn btn--secondary">Secondary Button</button>
+      <a href="#" role="button" class="btn btn--secondary">Secondary Anchor Tag Button</a>
+    </p><hr /><h3 id="table">Table</h3><table>
+      <caption>Critically Acclaimed Movies</caption><thead
+        ><tr
+          ><th style="text-align:left;">Name</th><th style="text-align:center;">Genre</th><th style="text-align:right;"
+            >Release Date</th
+          ></tr
+        ></thead
+      ><tbody
+        ><tr
+          ><td style="text-align:left;">The Shawshank Redemption</td><td style="text-align:center;">Crime, Drama</td><td
+            style="text-align:right;">14 October 1994</td
+          ></tr
+        ><tr
+          ><td style="text-align:left;">The Godfather</td><td style="text-align:center;">Crime, Drama</td><td
+            style="text-align:right;">24 March 1972</td
+          ></tr
+        ><tr
+          ><td style="text-align:left;">Schindler's List</td><td style="text-align:center;"
+            >Biography, Drama, History</td
+          ><td style="text-align:right;">4 February 1994</td></tr
+        ><tr
+          ><td style="text-align:left;">Se7en</td><td style="text-align:center;">Crime, Drama, Mystery</td><td
+            style="text-align:right;">22 September 1995</td
+          ></tr
+        ></tbody
+      >
+    </table>
+  </article>
+</Layout>

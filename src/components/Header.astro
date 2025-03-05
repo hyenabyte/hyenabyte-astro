@@ -1,0 +1,30 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { Sidebar } from './Sidebar';
+import Logo from './Logo.astro';
+---
+
+<header class="container">
+  <Logo />
+  <!-- <ThemeToggle /> -->
+  <Sidebar client:only />
+</header>
+
+<style>
+  header {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    @media (min-width: 640px) {
+      & {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      & {
+        margin-top: 4rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+</style>

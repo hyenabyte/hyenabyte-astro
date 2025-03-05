@@ -1,0 +1,19 @@
+[language-server.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
+config = { typescript = { tsdk = "/home/hyena/workspace/personal/website/hyenabyte-astro/node_modules/typescript/lib" }}
+
+[[language]]
+name = "astro"
+scope = "source.astro"
+injection-regex = "astro"
+file-types = ["astro"]
+language-servers = ["astro-ls"]
+formatter = { command = "prettier", args = ["--plugin", "prettier-plugin-astro", "--parser", "astro"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+auto-format = true
+file-types=["tsx", "ts"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }

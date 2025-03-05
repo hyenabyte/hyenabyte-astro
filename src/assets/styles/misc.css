@@ -1,0 +1,63 @@
+/* MISC MODULES */
+
+/* Skip To Content Module */
+.skipToContent {
+  border: 1px solid rgb(var(--color-muteoki-blue));
+  border-radius: 3px;
+  color: rgb(var(--color-muteoki-blue));
+
+  align-content: center;
+  height: auto;
+  padding: 8px 16px;
+
+  position: absolute;
+  left: calc(50% - 50px);
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+
+  &:focus {
+    transform: translateY(10%);
+  }
+}
+
+/* Back to Top Button */
+.backToTop {
+  border: none;
+  outline: none;
+
+  transform: translateY(300%);
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  /*display: none;*/
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+  /*z-index: 99;*/
+
+  border-radius: 3px;
+
+  background-color: rgb(var(--color-muteoki-base-900));
+  color: rgb(var(--color-muteoki-paper));
+  transition:
+    background-color 0.15s ease,
+    transform 0.3s;
+
+  &:hover {
+    background-color: rgb(var(--color-muteoki-base-700));
+  }
+
+  &:where(.dark, .dark *) {
+    background-color: rgb(var(--color-muteoki-base-100));
+    color: rgb(var(--color-muteoki-black));
+
+    &:hover {
+      background-color: rgb(var(--color-muteoki-base-300));
+    }
+  }
+}

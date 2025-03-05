@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import type { BlogPost } from '../../content.config';
+
+export async function getStaticPaths() {
+  const blogPosts = (await getCollection('blog')) as BlogPost[];
+  return blogPosts.map((post) => {
+    return { params: { post: post.id }, props: { post } };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout>
+  <article class="prose post">
+    <div class="post-header">
+      <a href="/blog">← Back</a>
+      <!-- <div class="post-title"> -->
+      <!-- <span> -->
+      <!-- {post.data.title} -->
+      <!-- </span> -->
+      <!-- <small> -->
+      <!-- <time class="post-timestamp" datetime={post.data.pubDate.toString()}>{post.data.pubDate.toDateString()}</time> -->
+      <!-- </small> -->
+      <!-- </div> -->
+      <!-- <div></div> -->
+    </div>
+    <hr />
+
+    <Content />
+  </article>
+</Layout>
+
+<style>
+  .post {
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .post-title {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        margin: 0;
+      }
+    }
+  }
+</style>
