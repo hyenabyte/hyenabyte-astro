@@ -1,9 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { PortfolioItem } from '../content.config';
+
+const items = (await getCollection('portfolio')) as PortfolioItem[];
 ---
 
 <Layout>
   <article class="prose">
     <h1>Portfolio</h1>
+
+    {
+      items.map((item) => (
+        <section class="portfolioPage-item">
+          <a href={'/portfolio/' + item.id}>
+            <h2>{item.data.title}</h2>
+          </a>
+          <p>{item.data.description}</p>
+          <p>
+            <a href={'/posts/' + item.id}>Read More</a>
+          </p>
+        </section>
+      ))
+    }
   </article>
 </Layout>
+
+<style></style>
