@@ -9,7 +9,6 @@ import Prose from '../../components/Prose.astro';
 export async function getStaticPaths() {
   const portfolioProjects = await getCollection('portfolio');
   return portfolioProjects.map((project) => {
-    console.log(project);
     return { params: { project: project.id }, props: { project } };
   });
 }
@@ -23,10 +22,10 @@ const { Content } = await render(project);
     <Panel class="col-1-1">
       <div class="post-header">
         <Prose>
-          <a href="/portfolio">← Back</a>
+          <a href="/portfolio"><i class="i-iconoir:nav-arrow-left"></i> Back</a>
         </Prose>
         <Prose>
-          <a href={project.data.url} target="_blank">Visit site</a>
+          <a href={project.data.url} target="_blank">Visit site <i class="i-iconoir:open-new-window"></i></a>
         </Prose>
       </div>
     </Panel>
