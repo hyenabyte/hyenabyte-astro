@@ -1,4 +1,5 @@
-import { createSignal, createEffect, onCleanup, onMount } from 'solid-js';
+import { createSignal, createEffect, onCleanup, onMount, Show } from 'solid-js';
+import { Transition } from 'solid-transition-group';
 
 export const BackToTop = () => {
   const [shown, setShown] = createSignal(false);
@@ -33,13 +34,12 @@ export const BackToTop = () => {
   };
 
   return (
-    <button
-      id="top-btn"
-      classList={{ backToTop: true, active: shown() }}
-      title="Scroll back to the top"
-      onClick={handleClick}
-    >
-      <span class="icon icon-nav-arrow-up"></span>
-    </button>
+    <Transition name="slide-up-fade">
+      <Show when={shown()}>
+        <button id="top-btn" classList={{ backToTop: true }} title="Scroll back to the top" onClick={handleClick}>
+          <span class="icon i-iconoir:nav-arrow-up"></span>
+        </button>
+      </Show>
+    </Transition>
   );
 };

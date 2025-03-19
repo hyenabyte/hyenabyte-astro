@@ -1,0 +1,26 @@
+---
+const { class: className } = Astro.props;
+---
+
+<div class:list={['panel px-2 md:px-4 md:py-2 lg:px-6 lg:py-4', className]}>
+  <slot />
+</div>
+
+<style>
+  .panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+    transition: all 0.15s ease;
+
+    border: rgb(var(--color-muteoki-base-100)) 1px solid;
+    background-color: rgb(var(--color-muteoki-paper));
+
+    &:where(.dark, .dark *) {
+      border: rgb(var(--color-muteoki-base-900)) 1px solid;
+      background-color: rgb(var(--color-muteoki-black));
+    }
+  }
+</style>

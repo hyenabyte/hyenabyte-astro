@@ -25,11 +25,11 @@
   border: none;
   outline: none;
 
-  transform: translateY(300%);
+  /* transform: translateY(300%); */
 
-  &.active {
-    transform: translateY(0);
-  }
+  /* &.active { */
+  /* transform: translateY(0); */
+  /* } */
 
   /*display: none;*/
   position: fixed;

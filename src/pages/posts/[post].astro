@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render } from 'astro:content';
 import type { BlogPost } from '../../content.config';
+import Panel from '../../components/Panel.astro';
+import Prose from '../../components/Prose.astro';
 
 export async function getStaticPaths() {
   const blogPosts = (await getCollection('blog')) as BlogPost[];
@@ -16,22 +18,30 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-  <article class="prose post">
-    <div class="post-header">
-      <a href="/blog">← Back</a>
-      <!-- <div class="post-title"> -->
-      <!-- <span> -->
-      <!-- {post.data.title} -->
-      <!-- </span> -->
-      <!-- <small> -->
-      <!-- <time class="post-timestamp" datetime={post.data.pubDate.toString()}>{post.data.pubDate.toDateString()}</time> -->
-      <!-- </small> -->
-      <!-- </div> -->
-      <!-- <div></div> -->
-    </div>
-    <hr />
+  <article class="post grid-container">
+    <Panel class="col-1-1">
+      <Prose>
+        <div class="post-header">
+          <a href="/blog">← Back</a>
+          <!-- <div class="post-title"> -->
+          <!-- <span> -->
+          <!-- {post.data.title} -->
+          <!-- </span> -->
+          <!-- <small> -->
+          <!-- <time class="post-timestamp" datetime={post.data.pubDate.toString()}>{post.data.pubDate.toDateString()}</time> -->
+          <!-- </small> -->
+          <!-- </div> -->
+          <!-- <div></div> -->
+        </div>
+        <!-- <hr /> -->
+      </Prose>
+    </Panel>
 
-    <Content />
+    <Panel class="col-1-1">
+      <Prose>
+        <Content />
+      </Prose>
+    </Panel>
   </article>
 </Layout>
 

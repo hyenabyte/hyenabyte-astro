@@ -47,6 +47,7 @@
                     languages.javascript = {
                       enable = true;
                       bun.enable = true;
+                      pnpm.enable = true;
                     };
 
                     pre-commit.hooks = {

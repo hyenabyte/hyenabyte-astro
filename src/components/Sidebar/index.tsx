@@ -1,6 +1,7 @@
-import { createSignal, Show } from 'solid-js';
+import { createSignal, For, Show } from 'solid-js';
 import './style.css';
 import { ThemeToggle } from '../ThemeToggle';
+import { Transition } from 'solid-transition-group';
 export const Sidebar = () => {
   const [isOpen, setOpen] = createSignal(false);
 
@@ -14,25 +15,28 @@ export const Sidebar = () => {
     {
       url: '/',
       label: 'Home',
-      icon: 'icon-home',
+      icon: 'i-iconoir:home',
     },
     {
       url: '/blog',
       label: 'Blog',
-      icon: 'icon-blog',
+      icon: 'i-iconoir:page-edit',
     },
     {
       url: '/portfolio',
       label: 'Portfolio',
-      icon: 'icon-folder',
+      icon: 'i-iconoir:folder',
     },
   ];
+
   return (
     <div class="sidebar">
       <div class="menu-header">
-        <Show when={isOpen()}>
-          <ThemeToggle />
-        </Show>
+        <Transition name="fade">
+          <Show when={isOpen()}>
+            <ThemeToggle />
+          </Show>
+        </Transition>
         <button
           class="menu-button"
           title="Open navigation menu"
@@ -41,24 +45,28 @@ export const Sidebar = () => {
             setOpen(!isOpen());
           }}
         >
-          <i class="icon icon-menu"></i>
+          {!isOpen() && <i class="icon i-iconoir:menu"></i>}
+          {isOpen() && <i class="icon i-iconoir:xmark"></i>}
         </button>
       </div>
-      <Show when={isOpen()}>
-        <hr />
-        <nav>
-          <ul>
-            {sidebarLinks.map((link) => (
-              <li class="menu-item">
-                <a href={link.url}>
-                  <span class="menu-item-label">{link.label}</span>
-                  <i class={'icon ' + link.icon} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </Show>
+      <Transition name="fade">
+        <Show when={isOpen()}>
+          <nav>
+            <ul>
+              <For each={sidebarLinks}>
+                {(link) => (
+                  <li class="menu-item">
+                    <a data-astro-prefetch="hover" href={link.url}>
+                      <span class="menu-item-label font-mono">{link.label}</span>
+                      <i class={'icon ' + link.icon} />
+                    </a>
+                  </li>
+                )}
+              </For>
+            </ul>
+          </nav>
+        </Show>
+      </Transition>
     </div>
   );
 };

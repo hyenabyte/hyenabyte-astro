@@ -1,4 +1,5 @@
 .sidebar {
+  z-index: 999;
   position: fixed;
   top: 20px;
   right: 20px;
@@ -90,14 +91,21 @@
       align-items: center;
 
       text-decoration: none;
-      font-family: var(--font-mono);
 
       i {
         display: inline-block;
       }
 
+      &:hover {
+        color: rgb(var(--color-muteoki-yellow-light));
+      }
+
       &:hover > .icon {
         background-color: rgb(var(--color-muteoki-yellow-light));
+      }
+
+      &:hover:where(.dark, .dark *) {
+        color: rgb(var(--color-muteoki-yellow));
       }
 
       &:hover:where(.dark, .dark *) > .icon {

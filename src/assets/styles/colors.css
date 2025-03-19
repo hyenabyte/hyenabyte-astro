@@ -38,7 +38,7 @@
   }
 }
 
-.prose {
+.prose-custom {
   --prose-body: rgb(var(--color-muteoki-base-800));
   --prose-headings: rgb(var(--color-muteoki-base-900));
   --prose-lead: rgb(var(--color-muteoki-base-700));

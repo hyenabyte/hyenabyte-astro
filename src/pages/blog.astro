@@ -2,18 +2,24 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import type { BlogPost } from '../content.config';
+import Panel from '../components/Panel.astro';
+import Prose from '../components/Prose.astro';
 
 const posts = (await getCollection('blog')) as BlogPost[];
 ---
 
 <Layout>
-  <article class="postPage prose">
-    <h1>Blog</h1>
+  <article class="grid-container">
+    <Panel class="col-1-1">
+      <Prose>
+        <h1>Blog</h1>
+      </Prose>
+    </Panel>
 
-    <ul class="postPage-recents">
-      {
-        posts.map((post) => (
-          <li class="postPage-post">
+    {
+      posts.map((post) => (
+        <Panel class="col-1-2">
+          <Prose>
             <a href={'/posts/' + post.id}>
               <h2>{post.data.title}</h2>
             </a>
@@ -22,34 +28,11 @@ const posts = (await getCollection('blog')) as BlogPost[];
             <p>
               <a href={'/posts/' + post.id}>Read More</a>
             </p>
-          </li>
-        ))
-      }
-    </ul>
+          </Prose>
+        </Panel>
+      ))
+    }
   </article>
 </Layout>
 
-<style>
-  .postPage {
-    .postPage-tagList {
-      display: flex;
-      list-style: none;
-      padding: 0;
-    }
-
-    .postPage-recents {
-      list-style: none;
-      padding: 0;
-    }
-
-    .postPage-post {
-      & > a {
-        text-decoration: none;
-      }
-
-      h2 {
-        color: rgb(var(--color-muteoki-blue));
-      }
-    }
-  }
-</style>
+<style></style>

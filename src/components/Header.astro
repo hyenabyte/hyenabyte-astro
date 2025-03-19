@@ -1,12 +1,11 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
 import { Sidebar } from './Sidebar';
 import Logo from './Logo.astro';
 ---
 
-<header class="container">
+<header class="padded-container">
   <Logo />
-  <!-- <ThemeToggle /> -->
+  <div></div>
   <Sidebar client:only />
 </header>
 

@@ -1,0 +1,36 @@
+/* DECORATIONS */
+.background-decoration::before {
+  content: '';
+  height: 90vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+
+  transition: background-color 0.15s ease;
+  /* margin: 2em; */
+}
+
+.background-grid::before {
+  background-image: linear-gradient(rgb(var(--color-muteoki-base-200)) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-muteoki-base-200)) 1px, transparent 1px);
+
+  background-size: 3em 3em;
+}
+
+.dark .background-grid::before {
+  background-image: linear-gradient(rgb(var(--color-muteoki-base-800)) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-muteoki-base-800)) 1px, transparent 1px);
+}
+
+.background-dots::before {
+  background-image: radial-gradient(circle at 1px 1px, rgb(var(--color-muteoki-base-200)) 1px, transparent 0);
+  background-size: 2em 2em;
+}
+
+.dark .background-dots::before {
+  background-image: radial-gradient(circle at 1px 1px, rgb(var(--color-muteoki-base-800)) 1px, transparent 0);
+}
+
+.background-fade::before {
+  mask: linear-gradient(-360deg, transparent 40%, white);
+}

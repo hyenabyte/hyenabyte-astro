@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+import Panel from '../components/Panel.astro';
+import Prose from '../components/Prose.astro';
 import profileImage from '../assets/images/profile.jpg';
 
 type ProfileIcon = {
@@ -12,133 +14,83 @@ const profileLinks: ProfileIcon[] = [
   {
     url: 'https://github.com/hyenabyte',
     label: 'Github',
-    icon: 'icon-github',
+    icon: 'i-iconoir:github',
   },
   {
     url: 'https://hachyderm.io/@hyena',
     label: 'Mastodon',
-    icon: 'icon-mastodon',
+    icon: 'i-iconoir:mastodon',
   },
+  //{
+  //  url: '#',
+  //  label: 'BlueSky',
+  //  icon: 'i-iconoir:at-sign',
+  //},
   {
-    url: '#',
-    label: 'BlueSky',
-    icon: 'icon-at-sign',
+    url: 'https://codepen.io/hyenabyte',
+    label: 'Codepen',
+    icon: 'i-iconoir:codepen',
   },
 ];
 ---
 
-<div class="profile">
-  <div class="image">
-    <Image
-      src={profileImage}
-      alt="A black and white drawing of the head of hyena. The hyena has glowing white eyes, and a streak of glistening black oil running over its face."
-    />
-  </div>
-
-  <div class="prose">
-    <h1 class="profile-title blue">David</h1>
-
-    <p class="profile-pronouns">
-      <strong class="cyan">[any pronouns]</strong>
-    </p>
-    <p class="profile-subtitle">
-      <em> just a little creature on the internet trying their best </em>
-    </p>
-    <div class="profile-icons">
-      {
-        profileLinks.map((link) => (
-          <a href={link.url} target="_blank">
-            <span class="profile-icon-tooltip">{link.label}</span>
-            <i class:list={['icon', 'icon-invert', link.icon]} />
-          </a>
-        ))
-      }
+<div class="profile grid-container">
+  <div class="col-1-2 lg:col-1-3 row-span-2 flex items-center justify-center">
+    <div class="image w-50 h-50 md:w-75 md:h-75 rounded-full overflow-hidden">
+      <Image
+        src={profileImage}
+        alt="A black and white drawing of the head of hyena. The hyena has glowing white eyes, and a streak of glistening black oil running over its face."
+      />
     </div>
-    <p class="profile-description">
-      Hi! I am <span class="blue">David</span> and I am a developer, pixel artist, and more!
-    </p>
-    <p class="profile-description">
-      By profession I am a full stack web developer and have worked extensively with PHP and Typescript, but by night I
-      like to explore and learn new stuff. Most recently I have been obsessed with Nix and Gleam, but the techstacks for
-      my personal projects are forever in flux.
-    </p>
-    <p class="profile-description">This website is a work in progress - more to come :)</p>
   </div>
+  <Panel class="col-1-2 lg:col-2-3 md:row-span-1 row-span-1 flex justify-center">
+    <Prose class="text-center">
+      <h1 class="profile-title text-muteoki-blue text-center">David Koch Gregersen</h1>
+      <p class="text-center">Webdeveloper</p>
+    </Prose>
+  </Panel>
+  <Panel class="hidden md:block col-1-6 lg:col-1-6 md:row-span-1 row-span-1">
+    <Prose>
+      <p>Full-stack web developer</p>
+    </Prose>
+  </Panel>
+  <Panel class="col-1-3 lg:col-1-2 md:row-span-1 row-span-1">
+    <Prose>
+      <p>I am currently looking for work!</p>
+      <p>
+        Send me an email:<br />
+        <a href="mailto:d@vidko.ch"><i class="i-iconoir:mail"></i> d@vidko.ch</a>
+      </p>
+    </Prose>
+  </Panel>
+  <Panel class="col-1-3">
+    <Prose>
+      <p>Check me out here</p>
+      <ul>
+        {
+          profileLinks.map((link) => (
+            <li>
+              <a href={link.url} target="_blank">
+                <i class:list={['icon', 'icon-invert', link.icon]} />
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </Prose>
+  </Panel>
+  <Panel class="col-2-3">
+    <Prose>
+      <p class="profile-description">
+        Hi! I am <span class="text-muteoki-blue">David</span> and I am a developer, pixel artist, and more!
+      </p>
+      <p class="profile-description">
+        By profession I am a full stack web developer and have worked extensively with PHP and Typescript, but by night
+        I like to explore and learn new stuff. Most recently I have been obsessed with Nix and Gleam, but the techstacks
+        for my personal projects are forever in flux.
+      </p>
+      <p class="profile-description">This website is a work in progress - more to come :)</p>
+    </Prose>
+  </Panel>
 </div>
-
-<style>
-  .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    max-width: 768px;
-    margin-right: auto;
-    margin-left: auto;
-
-    .image {
-      border-radius: 100%;
-      overflow: hidden;
-      margin-bottom: 2rem;
-      user-select: none;
-
-      max-width: 200px;
-      max-height: 200px;
-    }
-
-    .profile-title {
-      text-align: center;
-      text-transform: uppercase;
-      margin-bottom: 0rem;
-    }
-
-    .profile-pronouns,
-    .profile-subtitle {
-      margin-top: 0;
-      text-align: center;
-    }
-
-    .profile-icons {
-      display: flex;
-      /* flex-direction: column; */
-
-      justify-content: space-evenly;
-
-      /* &:hover>.icon { */
-      /* background-color: rgb(var(--color-muteoki-yellow-light)); */
-      /* } */
-
-      /* &:hover:where(.dark, .dark *)>.icon { */
-      /* background-color: rgb(var(--color-muteoki-yellow)); */
-      /* } */
-
-      a {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: 50px;
-        width: 50px;
-
-        border: solid 1px rgb(var(--color-muteoki-base-800));
-        border-radius: 100%;
-
-        &:where(.dark, .dark *) {
-          border-color: rgb(var(--color-muteoki-base-200));
-        }
-
-        &:hover .profile-icon-tooltip {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  @media (min-width: 640px) {
-    .profile .image {
-      max-width: 300px;
-      max-height: 300px;
-    }
-  }
-</style>

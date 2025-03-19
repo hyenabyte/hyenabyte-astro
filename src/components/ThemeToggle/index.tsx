@@ -3,7 +3,11 @@ import './style.css';
 
 export const ThemeToggle = () => {
   const handleClick = (event: MouseEvent) => {
-    document.documentElement.classList.toggle('dark');
+    const element = document.documentElement;
+
+    element.classList.toggle('dark');
+    const isDark = element.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   };
 
   return (
@@ -15,8 +19,8 @@ export const ThemeToggle = () => {
       aria-checked="true"
       onClick={handleClick}
     >
-      <div class="themeToggle-slide"></div>
-      <div class="themeToggle-switch"></div>
+      <div class="themeToggle-slide"> </div>
+      <div class="themeToggle-switch"> </div>
     </span>
   );
 };

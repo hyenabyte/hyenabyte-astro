@@ -10,14 +10,24 @@
   },
   "dependencies": {
     "@astrojs/solid-js": "^5.0.5",
-    "astro": "^5.4.1",
-    "solid-js": "^1.9.5"
+    "astro": "^5.5.2",
+    "sharp": "^0.33.5",
+    "solid-js": "^1.9.5",
+    "solid-transition-group": "^0.3.0"
   },
   "devDependencies": {
     "@astrojs/language-server": "^2.15.4",
     "@astrojs/ts-plugin": "^1.10.4",
-    "prettier": "^3.5.2",
+    "@iconify-json/iconoir": "^1.2.7",
+    "@unocss/preset-icons": "^66.1.0-beta.5",
+    "@unocss/preset-mini": "^66.1.0-beta.5",
+    "@unocss/preset-typography": "^66.1.0-beta.5",
+    "@unocss/preset-web-fonts": "66.1.0-beta.6",
+    "@unocss/preset-wind3": "^66.1.0-beta.5",
+    "@unocss/reset": "^66.1.0-beta.5",
+    "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "solid-devtools": "^0.33.0"
+    "solid-devtools": "^0.33.0",
+    "unocss": "^66.1.0-beta.5"
   }
 }

@@ -1,29 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Panel from '../components/Panel.astro';
+import Prose from '../components/Prose.astro';
+import PanelImage from '../components/PanelImage.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import type { PortfolioItem } from '../content.config';
 
-const items = (await getCollection('portfolio')) as PortfolioItem[];
+const items = await getCollection('portfolio');
 ---
 
 <Layout>
-  <article class="prose">
-    <h1>Portfolio</h1>
+  <article class="grid-container">
+    <Panel class="col-1-1">
+      <Prose>
+        <h1>Portfolio</h1>
+      </Prose>
+    </Panel>
 
     {
       items.map((item) => (
-        <section class="portfolioPage-item">
-          <a href={'/portfolio/' + item.id}>
-            <h2>{item.data.title}</h2>
-          </a>
-          <p>{item.data.description}</p>
-          <p>
-            <a href={'/posts/' + item.id}>Read More</a>
-          </p>
-        </section>
+        <PanelImage class="col-1-2" src={item.data.thumbnail} alt={item.data.thumbnailAlt} />
+        <Panel class="col-1-2">
+          <Prose>
+          <section class="portfolioPage-item">
+            <a href={'/portfolio/' + item.id}>
+              <h2>{item.data.title}</h2>
+            </a>
+            <p>{item.data.description}</p>
+            <p>
+              <a href={'/portfolio/' + item.id}>Read More</a>
+            </p>
+            <ul>
+              {item.data.tags.map((tag) => <li>{tag}</li>)}
+            </ul>
+          </section>
+          </Prose>
+        </Panel>
       ))
     }
   </article>
 </Layout>
-
-<style></style>

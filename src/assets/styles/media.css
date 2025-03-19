@@ -17,9 +17,10 @@ video {
 
   height: 300px;
   width: 300px;
+
   img {
     height: 100%;
-    widht: 100%;
-    object-fit: contain;
+    width: 100%;
+    object-fit: cover;
   }
 }

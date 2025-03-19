@@ -1,45 +1,49 @@
 ---
+import { ClientRouter, fade } from 'astro:transitions';
 import '../assets/style.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro Basics</title>
-        <script></script>
-    </head>
-    <body>
-        <a href="#main" class="skipToContent">Skip to content</a>
-        <Header />
-        <main id="main" class="container">
-            <slot />
-        </main>
-        <Footer />
-    </body>
+<html lang="en" transition:name="root" transition:animate="none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Hyenabyte.dev</title>
+    <ClientRouter />
+  </head>
+  <body class="background-decoration background-dots background-fade">
+    <a href="#main" class="skipToContent">Skip to content</a>
+    <Header />
+    <main id="main" transition:animate={fade({ delay: 0, duration: '0.15s' })} class="page-container">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
 
-<script>
-    const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-            return localStorage.getItem('theme');
-        }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
-        }
-        return 'light';
-    })();
+<script is:inline>
+  const applyTheme = () => {
+    localStorage.theme === 'dark'
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark');
+  };
 
-    if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-    } else {
-        document.documentElement.classList.add('dark');
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
     }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  })();
 
-    window.localStorage.setItem('theme', theme ?? 'light');
+  document.addEventListener('astro:after-swap', applyTheme);
+  applyTheme();
+
+  window.localStorage.setItem('theme', theme ?? 'light');
 </script>

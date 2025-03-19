@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+const { class: className, src, alt } = Astro.props;
+---
+
+<div class:list={['panel', className]}>
+  <Image src={src} alt={alt} />
+</div>
+
+<style>
+  .panel {
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    position: relaitve;
+
+    border: rgb(var(--color-muteoki-base-200)) 1px solid;
+
+    &:where(.dark, .dark *) {
+      border: rgb(var(--color-muteoki-base-800)) 1px solid;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+</style>

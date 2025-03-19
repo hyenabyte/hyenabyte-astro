@@ -1,10 +1,18 @@
 @import 'styles/colors.css';
-@import 'styles/fonts.css';
-@import 'styles/icons.css';
+/* @import 'styles/fonts.css'; */
+/* @import 'styles/icons.css'; */
 @import 'styles/media.css';
 @import 'styles/misc.css';
-@import 'styles/table.css';
-@import 'styles/typography.css';
+@import 'styles/animations.css';
+@import 'styles/decorations.css';
+
+/* @import 'styles/table.css'; */
+/* @import 'styles/layouts.css'; */
+/* @import 'styles/typography.css'; */
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -25,13 +33,6 @@ body {
   }
 }
 
-hr {
-  height: 0;
-  color: inherit;
-  border-top-width: 1px;
-  transition: color 0.15s ease;
-}
-
 *,
 ::before,
 ::after {
@@ -43,38 +44,6 @@ hr {
 
 main {
   flex: 1;
-}
-
-/* Container */
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-
-  padding-right: 1rem;
-  padding-left: 1rem;
-
-  max-width: 1024px;
-}
-
-/* @media (min-width: 768px) {
-    .container {
-        max-width: 768px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1024px;
-    }
-} */
-
-@media (min-width: 640px) {
-  .container {
-    padding-right: 6rem;
-    padding-left: 6rem;
-    /* max-width: 640px; */
-  }
 }
 
 /* Buttons */
