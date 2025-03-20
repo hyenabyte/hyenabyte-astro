@@ -23,16 +23,18 @@ const items = await getCollection('portfolio');
         <Panel class="col-1-2">
           <Prose>
           <section class="portfolioPage-item">
-            <a href={'/portfolio/' + item.id}>
-              <h2>{item.data.title}</h2>
-            </a>
-            <p>{item.data.description}</p>
-            <p>
-              <a href={'/portfolio/' + item.id}>Read More</a>
-            </p>
-            <ul>
-              {item.data.tags.map((tag) => <li>{tag}</li>)}
+            <!-- <a href={'/portfolio/' + item.id}> -->
+              <!-- <h2>{item.data.title}</h2> -->
+            <!-- </a> -->
+            <h2>{item.data.title}</h2>
+            <ul class="flex p-0 list-none gap-1">
+              {item.data.tags.map((tag) => <li><small>{tag}</small></li>)}
             </ul>
+            <p>{item.data.description}</p>
+            <!-- <p> -->
+              <!-- <a href={'/portfolio/' + item.id}>Read More</a> -->
+            <!-- </p> -->
+            <a href={item.data.url} target="_blank">Visit site <i class="i-iconoir:open-new-window"></i></a>
           </section>
           </Prose>
         </Panel>
@@ -40,3 +42,6 @@ const items = await getCollection('portfolio');
     }
   </article>
 </Layout>
+
+<style>
+</style>

@@ -1,14 +1,14 @@
 ---
 title: 'Surf SUP'
-description: 'Lorem ipsum dolor sit amet'
+description: 'A website for members of a Surf and Stand-up paddle club built in Next.js, including a members area, and a webshop built using Medusa.js'
 url: 'https://www.surfsup.dk'
 thumbnail: './surfsup-1.png'
 thumbnailAlt: 'Alt text goes here'
 tags:
-  - wordpress
-  - frontend
-  - backend
-  - symfony
+  - Next.js
+  - Frontend
+  - Medusa.js
+  - Strapi
 ---
 
 # Sundhed+ Behandlerindeks

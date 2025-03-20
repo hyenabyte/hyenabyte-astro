@@ -23,7 +23,7 @@ export default defineConfig({
     presetWebFonts({
       provider: 'bunny',
       fonts: {
-        sans: 'Atkinson Hyperligible',
+        sans: ['Atkinson Hyperlegible'],
         mono: ['Cutive Mono'],
       },
     }),

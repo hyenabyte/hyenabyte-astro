@@ -1,14 +1,14 @@
 ---
 title: 'Sundhed+ Behandlerindeks'
-description: 'Lorem ipsum dolor sit amet'
+description: 'An index of practitioners. Built using Vue, using MapBox to display, search through and filter a large list of practitioners on a map.'
 url: 'https://www.sundhedplus.dk/find-behandler/?cat=1'
 thumbnail: './sundhedplus-1.png'
 thumbnailAlt: 'Alt text goes here'
 tags:
-  - wordpress
-  - frontend
-  - backend
-  - symfony
+  - Vue
+  - MapBox
+  - Frontend
+  - API
 ---
 
 # Sundhed+ Behandlerindeks

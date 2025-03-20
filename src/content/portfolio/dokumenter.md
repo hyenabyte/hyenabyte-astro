@@ -1,14 +1,14 @@
 ---
 title: 'Dokumenter.dk'
-description: 'Lorem ipsum dolor sit amet'
+description: 'A platform for generating legal documents. The frontend including the shop and user-area is built in WordPress, and the document engine is built using Symfony.'
 url: 'https://dokumenter.dk'
 thumbnail: './dokumenter-1.png'
 thumbnailAlt: 'Alt text goes here'
 tags:
-  - wordpress
-  - frontend
-  - backend
-  - symfony
+  - WordPress
+  - Frontend
+  - Backend
+  - Symfony
 ---
 
 # Dokumenter.dk
