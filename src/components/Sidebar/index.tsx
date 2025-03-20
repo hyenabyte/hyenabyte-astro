@@ -9,6 +9,7 @@ export const Sidebar = () => {
     url: string;
     label: string;
     icon: string;
+    external: bool;
   };
 
   const sidebarLinks: SidebarLink[] = [
@@ -16,16 +17,37 @@ export const Sidebar = () => {
       url: '/',
       label: 'Home',
       icon: 'i-iconoir:home',
+      external: false,
     },
-    {
-      url: '/blog',
-      label: 'Blog',
-      icon: 'i-iconoir:page-edit',
-    },
+    // {
+    //   url: '/blog',
+    //   label: 'Blog',
+    //   icon: 'i-iconoir:page-edit',
+    //   external: false
+    // },
     {
       url: '/portfolio',
       label: 'Portfolio',
       icon: 'i-iconoir:folder',
+      external: false,
+    },
+    {
+      url: 'https://github.com/hyenabyte',
+      label: 'GitHub',
+      icon: 'i-iconoir:github',
+      external: true,
+    },
+    {
+      url: 'https://codepen.io/hyenabyte',
+      label: 'CodePen',
+      icon: 'i-iconoir:codepen',
+      external: true,
+    },
+    {
+      url: 'https://www.linkedin.com/in/davidkochg/',
+      label: 'Linkedin',
+      icon: 'i-iconoir:linkedin',
+      external: true,
     },
   ];
 
@@ -56,7 +78,7 @@ export const Sidebar = () => {
               <For each={sidebarLinks}>
                 {(link) => (
                   <li class="menu-item">
-                    <a data-astro-prefetch="hover" href={link.url}>
+                    <a data-astro-prefetch="hover" href={link.url} target={link.external ? '_blank' : '_self'}>
                       <span class="menu-item-label font-mono">{link.label}</span>
                       <i class={'icon ' + link.icon} />
                     </a>

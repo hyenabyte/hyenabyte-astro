@@ -31,6 +31,11 @@ const profileLinks: ProfileIcon[] = [
     label: 'Codepen',
     icon: 'i-iconoir:codepen',
   },
+  {
+    url: 'https://www.linkedin.com/in/davidkochg/',
+    label: 'Linkedin',
+    icon: 'i-iconoir:linkedin',
+  },
 ];
 ---
 
@@ -46,12 +51,12 @@ const profileLinks: ProfileIcon[] = [
   <Panel class="col-1-2 lg:col-2-3 md:row-span-1 row-span-1 flex justify-center">
     <Prose class="text-center">
       <h1 class="profile-title text-muteoki-blue text-center">David Koch Gregersen</h1>
-      <p class="text-center">Webdeveloper</p>
+      <p class="text-center">Web Developer</p>
     </Prose>
   </Panel>
-  <Panel class="hidden md:block col-1-6 lg:col-1-6 md:row-span-1 row-span-1">
+  <Panel class="col-1-6 lg:col-1-6 md:row-span-1 row-span-1 flex flex-col justify-center items-center">
     <Prose>
-      <p>Full-stack web developer</p>
+      <a href="/portfolio"><i class="i-iconoir:folder"></i> My Portfolio</a>
     </Prose>
   </Panel>
   <Panel class="col-1-3 lg:col-1-2 md:row-span-1 row-span-1">
