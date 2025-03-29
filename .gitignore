@@ -34,6 +34,7 @@ lerna-debug.log*
 .devenv*
 devenv.local.nix
 .direnv*
+.pre-commit-config.yaml
 
 # build output
 dist/
