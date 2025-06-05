@@ -1,17 +1,20 @@
 ---
+import Prose from './Prose.astro';
 import { BackToTop } from './BackToTop.tsx';
 ---
 
 <footer class="padded-container mainFooter prose prose-muteoki dark:prose-inverted">
   <BackToTop client:only />
-  <p>
-    <small>
-      hyenabyte.dev 2025 -
-      <a href="https://github.com/hyenabyte/hyenabyte-astro" target="_blank"
-        >source<i class="i-iconoir:code inline-block"></i></a
-      >
-    </small>
-  </p>
+  <Prose>
+    <p class="text-muteoki-600 dark:text-muteoki-400">
+      <small>
+        hyenabyte.dev 2025 —
+        <a class="text-muteoki-500" href="https://github.com/hyenabyte/hyenabyte-astro" target="_blank"
+          >source<i class="i-iconoir:code inline-block relative z-1"></i></a
+        >
+      </small>
+    </p>
+  </Prose>
 </footer>
 
 <style>
@@ -20,8 +23,7 @@ import { BackToTop } from './BackToTop.tsx';
     margin-top: 4rem;
     margin-bottom: 6rem;
 
-    & > p {
-      text-align: right;
-    }
+    display: flex;
+    justify-content: end;
   }
 </style>

@@ -36,7 +36,7 @@ export const BackToTop = () => {
   return (
     <Transition name="slide-up-fade">
       <Show when={shown()}>
-        <button id="top-btn" classList={{ backToTop: true }} title="Scroll back to the top" onClick={handleClick}>
+        <button id="top-btn" class="backToTop z-99" title="Scroll back to the top" onClick={handleClick}>
           <span class="icon i-iconoir:nav-arrow-up"></span>
         </button>
       </Show>
