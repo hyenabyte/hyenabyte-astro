@@ -3,6 +3,14 @@ import { ClientRouter, fade } from 'astro:transitions';
 import '../assets/style.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+}
+
+const siteName = "Hyenabyte";
+
+const { title = '' } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,7 +20,7 @@ import Footer from '../components/Footer.astro';
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Hyenabyte.dev</title>
+    <title>{(title !== '' ? `${title} | ` : '') + siteName}</title>
     <ClientRouter />
   </head>
   <body class="background-decoration background-dots background-fade font-sans">

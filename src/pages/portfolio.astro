@@ -9,14 +9,14 @@ import { getCollection } from 'astro:content';
 const items = await getCollection('portfolio');
 ---
 
-<Layout>
+<Layout title="Portfolio">
   <article class="grid-container">
     <Panel class="col-1-1">
       <Prose>
         <h1>Portfolio</h1>
 
         <p>
-          This is a selection of projects I have either created myself or been a lead developer on. This is just a small selection, I have completed many many more projects. 
+          This is a selection of projects I have either created myself or been a lead developer on. This is just a small selection, I have completed many many more projects.
         </p>
       </Prose>
     </Panel>
