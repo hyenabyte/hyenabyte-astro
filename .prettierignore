@@ -1,6 +1,7 @@
 # Other files
 public/.env
 public/.htaccess
+public/site.webmanifest
 
 # NPM
 node_modules
